@@ -1,25 +1,24 @@
-/* [Æò°¡°ú¸ñ 1] : °úÁ¦ ¼³¸í
+/* [í‰ê°€ê³¼ëª© 1] : ê³¼ì œ ì„¤ëª…
 
-ÄÄÇ»ÅÍ ÇÁ·Î±×·¡¹Ö Æò°¡°úÁ¦ (¹èÁ¡ 25Á¡)
-ÇÐ°ú : ÄÄÇ»ÅÍ°øÇÐºÎ
-ÇÐ¹ø : 202200976
-ÀÌ¸§ : ±èÁö¿ø
+ì»´í“¨í„° í”„ë¡œê·¸ëž˜ë° í‰ê°€ê³¼ì œ (ë°°ì  25ì )
+í•™ê³¼ : ì»´í“¨í„°ê³µí•™ë¶€
+í•™ë²ˆ : 202200976
+ì´ë¦„ : ê¹€ì§€ì›
 
-°úÁ¦ ÁÖÁ¦ : ÄÚ·Î³ª ¹é½ÅÀÇ Á¾·ù´Â ¾Ë·ÁÁØ ÈÄ ÇöÀç ¹é½Å ¸îÂ÷¸¦ ¾ðÁ¦ ¸Â¾Ò´Â Áö ÀÔ·ÂÇÑ´Ù. ±× ÈÄ ´ÙÀ½ ¹é½ÅÀ» ¾ðÁ¦ ¸ÂÀ¸¸é µÇ´ÂÁö ¾Ë·ÁÁÖ´Â ÇÁ·Î±×·¥À» ±¸ÇöÇÏ°íÀÚ ÇÑ´Ù. 
+ê³¼ì œ ì£¼ì œ : ì½”ë¡œë‚˜ ë°±ì‹ ì˜ ì¢…ë¥˜ëŠ” ì•Œë ¤ì¤€ í›„ í˜„ìž¬ ë°±ì‹  ëª‡ì°¨ë¥¼ ì–¸ì œ ë§žì•˜ëŠ” ì§€ ìž…ë ¥í•œë‹¤. ê·¸ í›„ ë‹¤ìŒ ë°±ì‹ ì„ ì–¸ì œ ë§žìœ¼ë©´ ë˜ëŠ”ì§€ ì•Œë ¤ì£¼ëŠ” í”„ë¡œê·¸ëž¨ì„ êµ¬í˜„í•˜ê³ ìž í•œë‹¤. 
 */
 
 
 #include <stdio.h>
 int monthplus(int m);
 
-typedef struct {		// [Æò°¡Ç×¸ñ 5] : ±¸Á¶Ã¼ »ç¿ë
-	char* vname;		// [Æò°¡Ç×¸ñ 4] : Æ÷ÀÎÅÍ »ç¿ë
+typedef struct {		// [í‰ê°€í•­ëª© 5] : êµ¬ì¡°ì²´ ì‚¬ìš©
+	char* vname;		// [í‰ê°€í•­ëª© 4] : í¬ì¸í„° ì‚¬ìš©
 	int days;
 }VACCINE;
+	
 
-int collection[4] = { 0, 0, 0, 0 };		
-
-VACCINE vaccine[4];		// [Æò°¡Ç×¸ñ 3] : ¹è¿­ »ç¿ë (ÀüÃ¼ ¹é½Å Á¤º¸¸¦ ¹è¿­¿¡ Áý¾î³Ö¾úÀ½)
+VACCINE vaccine[4];		// [í‰ê°€í•­ëª© 3] : ë°°ì—´ ì‚¬ìš© (ì „ì²´ ë°±ì‹  ì •ë³´ë¥¼ ë°°ì—´ì— ì§‘ì–´ë„£ì—ˆìŒ)
 
 void initVac();
 
@@ -29,30 +28,30 @@ int main(void)
 	int m;
 	int d;
 
-	printf("------ÄÚ·Î³ª ¹é½Å Á¾·ù------\n\n");
-	printf(vaccine[0].vname = "È­ÀÌÀÚ\n");
-	printf(vaccine[1].vname = "¸ð´õ³ª\n");
-	printf(vaccine[2].vname = "¾á¼¾\n");
-	printf(vaccine[3].vname = "¾Æ½ºÆ®¶óÁ¦³×Ä«");
+	printf("------ì½”ë¡œë‚˜ ë°±ì‹  ì¢…ë¥˜------\n\n");
+	printf(vaccine[0].vname = "í™”ì´ìž\n");
+	printf(vaccine[1].vname = "ëª¨ë”ë‚˜\n");
+	printf(vaccine[2].vname = "ì–€ì„¼\n");
+	printf(vaccine[3].vname = "ì•„ìŠ¤íŠ¸ë¼ì œë„¤ì¹´");
 
-	printf("\n¹é½ÅÀ» ¸îÂ÷ ¸Â¾Ò´Â Áö ÀÔ·ÂÇÏ¼¼¿ä : \n");
+	printf("\në°±ì‹ ì„ ëª‡ì°¨ ë§žì•˜ëŠ” ì§€ ìž…ë ¥í•˜ì„¸ìš” : \n");
 	scanf_s("%d", &v);
-	printf("¹é½ÅÀ» ¾ðÁ¦ ¸Â¾Ò´Â Áö ÀÔ·ÂÇÏ¼¼¿ä(0¿ù0ÀÏÀ» ¼ýÀÚ·Î¸¸ ±âÀÔ): \n");
+	printf("ë°±ì‹ ì„ ì–¸ì œ ë§žì•˜ëŠ” ì§€ ìž…ë ¥í•˜ì„¸ìš”(0ì›”0ì¼ì„ ìˆ«ìžë¡œë§Œ ê¸°ìž…): \n");
 	scanf_s("%d %d", &m, &d);
-	printf("\n\n----ÇöÀç ¹é½Å Á¢Á¾ ÇöÈ²----\n\n");
-	printf("%dÂ÷¸¦ %d¿ù %dÀÏ¿¡ Á¢Á¾ ¿Ï·áÇÏ¿´½À´Ï´Ù.", v, m, d);
+	printf("\n\n----í˜„ìž¬ ë°±ì‹  ì ‘ì¢… í˜„í™©----\n\n");
+	printf("%dì°¨ë¥¼ %dì›” %dì¼ì— ì ‘ì¢… ì™„ë£Œí•˜ì˜€ìŠµë‹ˆë‹¤.", v, m, d);
 	if (v == 1)
 	{
-		printf("\n\n%dÂ÷¸¦ %d¿ù %dÀÏ¿¡ Á¢Á¾ÇÏ¼¼¿ä\n\n", v + 1, monthplus(m), d);
+		printf("\n\n%dì°¨ë¥¼ %dì›” %dì¼ì— ì ‘ì¢…í•˜ì„¸ìš”\n\n", v + 1, monthplus(m), d);
 	}
 	else if (v == 2)
 	{
 		monthplus(m + 2);
-		printf("\n\n%dÂ÷¸¦ %d¿ù %dÀÏ¿¡ Á¢Á¾ÇÏ¼¼¿ä\n\n", v + 1, monthplus(m+2), d);
+		printf("\n\n%dì°¨ë¥¼ %dì›” %dì¼ì— ì ‘ì¢…í•˜ì„¸ìš”\n\n", v + 1, monthplus(m+2), d);
 	}
 	else
 	{
-		printf("\n\n´õÀÌ»ó Á¢Á¾ÇÒ ¹é½ÅÀÌ ¾ø½À´Ï´Ù.\n\n");
+		printf("\n\në”ì´ìƒ ì ‘ì¢…í•  ë°±ì‹ ì´ ì—†ìŠµë‹ˆë‹¤.\n\n");
 	}
 	
 	return 0;
@@ -61,17 +60,17 @@ int main(void)
 
 void initVac()
 {
-	vaccine[0].vname = "È­ÀÌÀÚ";
+	vaccine[0].vname = "í™”ì´ìž";
 	
-	vaccine[1].vname = "¸ð´õ³ª";
+	vaccine[1].vname = "ëª¨ë”ë‚˜";
 
-	vaccine[2].vname = "¾á¼¾";
+	vaccine[2].vname = "ì–€ì„¼";
 
-	vaccine[3].vname = "¾Æ½ºÆ®¶óÁ¦³×Ä«";
+	vaccine[3].vname = "ì•„ìŠ¤íŠ¸ë¼ì œë„¤ì¹´";
 
 }
 
-int monthplus(int m)		// [Æò°¡Ç×¸ñ 2] : ÇÔ¼ö »ç¿ë 
+int monthplus(int m)		// [í‰ê°€í•­ëª© 2] : í•¨ìˆ˜ ì‚¬ìš© 
 {
 	m += 2;
 	if (m >= 11)
